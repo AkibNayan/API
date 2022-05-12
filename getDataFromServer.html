@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <h2>JavaScript Object Notation</h2>
+    <ul id="users-container">
+
+    </ul>
+    <!-- <script>
+        //Conversion object to string and vice-versa
+        const user = {
+            id:245,
+            name:"Masud",
+            lover:{
+                name:"Jamila",
+                favFood:"Pizza"
+            },
+            friendsAge: [23, 25, 26],
+            friends: ["Kamal", "Sakib", "Hasnain"]
+        };
+        const userJSON = JSON.stringify(user);
+        console.log(userJSON);
+        const userFromJSON = JSON.parse(userJSON);
+        console.log(userFromJSON);
+    </script> -->
+
+    <!-- <script>
+        //Data loading system from server to website
+        fetch('https://jsonplaceholder.typicode.com/todos/1/users')
+        .then(response => response.json())
+        .then(json => displayUser(json))
+
+        function displayUser(users){
+            //console.log("users", users)
+            const userName = users.map(user=>user.username);
+            //console.log(userName);
+            const ul = document.getElementById("users-container");
+            for(let i=0; i<userName.length; i++){
+                const user = userName[i];
+                const li = document.createElement("li");
+                li.innerText = user;
+                ul.appendChild(li);
+            }
+        }
+
+    </script> -->
+
+    <!-- <script>
+        //Data loading system from server to website
+        fetch('https://jsonplaceholder.typicode.com/todos/1/comments')
+        .then(response => response.json())
+        .then(json => displayComments(json))
+
+        function displayComments(comments){
+            //console.log("Comments", comments);
+            const commentorsEmail = comments.map(element=>element.email);
+            //console.log(commentorsEmail);
+            const ul = document.getElementById('users-container');
+            for(let i=0; i < commentorsEmail.length; i++){
+                const email = commentorsEmail[i];
+                //console.log(email);
+                const li = document.createElement('li');
+                li.innerText = email;
+                ul.appendChild(li);
+            }
+        }
+
+    </script> -->
+
+    <script>
+        //Data loading system from server to website
+        fetch('https://jsonplaceholder.typicode.com/todos/1/albums')
+        .then(response => response.json())
+        .then(json => displayAlbums(json))
+        .catch(error => console.log(error))
+
+        function displayAlbums(titles){
+            //console.log("Titles",titles)
+            const albumTitles = titles.map(element=>element.title);
+            //console.log(albumTitles);
+            const ul = document.getElementById('users-container');
+            for (let i=0; i< albumTitles.length; i++){
+                const title = albumTitles[i];
+                //console.log(title);
+                const li = document.createElement('li');
+                li.innerText = title;
+                ul.appendChild(li);
+            }
+        }
+    </script>
+</body>
+</html>
